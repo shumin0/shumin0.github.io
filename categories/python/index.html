@@ -20,20 +20,15 @@
     var CONFIG = {"hostname":"shumin0.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="在集合元素遍历期间，删除元素要注意（在java中可以用Iterator来删除）">
-<meta property="og:type" content="article">
-<meta property="og:title" content="python遍历时删除元素">
-<meta property="og:url" content="https://shumin0.github.io/2020/11/18/python%E9%81%8D%E5%8E%86list%E6%97%B6%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="学习记录">
+<meta property="og:url" content="https://shumin0.github.io/categories/python/index.html">
 <meta property="og:site_name" content="学习记录">
-<meta property="og:description" content="在集合元素遍历期间，删除元素要注意（在java中可以用Iterator来删除）">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-11-18T06:41:05.000Z">
-<meta property="article:modified_time" content="2020-11-18T07:07:47.413Z">
 <meta property="article:author" content="shumin0">
-<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://shumin0.github.io/2020/11/18/python%E9%81%8D%E5%8E%86list%E6%97%B6%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0/">
+<link rel="canonical" href="https://shumin0.github.io/categories/python/">
 
 
 <script id="page-configurations">
@@ -41,12 +36,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'ch'
   };
 </script>
 
-  <title>python遍历时删除元素 | 学习记录</title>
+  <title>Category: python | 学习记录</title>
   
 
 
@@ -149,100 +144,51 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content category">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ch">
-    <link itemprop="mainEntityOfPage" href="https://shumin0.github.io/2020/11/18/python%E9%81%8D%E5%8E%86list%E6%97%B6%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="shumin0">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学习记录">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          python遍历时删除元素
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-11-18 14:41:05 / Modified: 15:07:47" itemprop="dateCreated datePublished" datetime="2020-11-18T14:41:05+08:00">2020-11-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">python
+          <small>Category</small>
+        </h2>
+      </div>
 
       
-        <p>在集合元素遍历期间，删除元素要注意（在java中可以用Iterator来删除）</p>
-<a id="more"></a>
-
-<p>因遍历过程中下标时增长的，删除后list变短，元素位置会左移，导致部分元素遍历时遗漏处理的情况（<span style="color:red">但是不会抛出异常</span>）</p>
-<p>解决方案有三个</p>
-<ol>
-<li>不在遍历时移除数据，用其他方式实现逻辑</li>
-<li>用浅拷贝遍历</li>
-<li>倒序删除</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="comment"># data2 = data  # 不拷贝 - 结果出错，无异常抛出</span></span><br><span class="line">    data2 = [x <span class="keyword">for</span> x <span class="keyword">in</span> data]  <span class="comment"># 浅拷贝</span></span><br><span class="line">    <span class="comment"># data2 = data.copy()  # 浅拷贝</span></span><br><span class="line">    <span class="comment"># data2 = copy.deepcopy(data)  # 深拷贝 - 出错，抛出异常，移除时找不到元素</span></span><br><span class="line">    <span class="comment"># data2 = copy.copy(data)  # 浅拷贝</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data2:</span><br><span class="line">        print(i)</span><br><span class="line">        data.remove(i)</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 倒序删除举例</span></span><br><span class="line"><span class="comment"># def test2(data):</span></span><br><span class="line"><span class="comment">#     for i in data[::-1]:</span></span><br><span class="line"><span class="comment">#         print(i)</span></span><br><span class="line"><span class="comment">#         data.remove(i)</span></span><br><span class="line"><span class="comment">#     return data</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, v</span>):</span></span><br><span class="line">        self.value = v</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.value</span><br><span class="line"></span><br><span class="line">d = [A(x) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">list</span>(<span class="string">&#x27;ABCD&#x27;</span>)]</span><br><span class="line">print(test(d))</span><br></pre></td></tr></table></figure>
-
-
+    <div class="collection-year">
+      <span class="collection-header">2020</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/python/" rel="tag"># python</a>
-          </div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-11-18T14:41:05+08:00"
+              content="2020-11-18">
+          11-18
+        </time>
+      </div>
 
-        
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/11/18/python%E9%81%8D%E5%8E%86list%E6%97%B6%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0/" itemprop="url">
+            <span itemprop="name">python遍历时删除元素</span>
+          </a>
+      </div>
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/11/12/git%E5%9C%A8win10%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" rel="prev" title="git在win10乱码问题">
-      <i class="fa fa-chevron-left"></i> git在win10乱码问题
-    </a></div>
-      <div class="post-nav-item"></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+    </div>
+  </div>
   
   
+  
+
   
 
 
